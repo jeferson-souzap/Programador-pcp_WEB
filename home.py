@@ -14,6 +14,10 @@ def home():
     return render_template('home.html')
 
 
+@app.route('/plano_maquina')
+def plano_maquina():
+    return render_template('plano_maquina.html')
+
 
 @app.route('/dasboard_pedidos')
 def dasboard_pedidos():

@@ -1,0 +1,69 @@
+{% extends "template.html" %}
+
+
+{% block title %}Plano de maquina{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/plano_maquina.css') }}">
+
+<h1>Programação de Máquinas</h1>
+
+<div>
+    <button type="submit" class="btn btn-primary">Salvar Tudo</button>
+</div>
+
+<b></b>
+
+<form method="post" action="/salvar">
+  {% for maquina in ['PICOTADEIRA 01', 'PICOTADEIRA 02', 'PICOTADEIRA 03', 'PICOTADEIRA 04'] %}
+  <div class="maquina-box">
+    <h2>{{ maquina }}</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-carga">Num Carga</th>
+          <th class="col-tipo">Tipo Material</th>
+          <th class="col-cliente">Cliente</th>
+          <th class="col-ordem">Ordem Produção</th>
+          <th class="col-material">Material</th>
+          <th class="col-qtd_fardos">Qtd Fardos</th>
+          <th class="col-qtd_kg">Qtd kg</th>
+          <th class="col-qtd_und">Qtd unid</th>
+          <th class="col-dt_inicial">Data hora Inicial</th>
+          <th class="col-dt_final">Data hora Final</th>
+          <th class="col-bobina">Bobina Usada</th>
+          <th class="col-obs">Observação</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(10) %}
+        <tr>
+          <td><input type="text" name="{{ maquina }}_num_carga_{{ i }}"></td>
+          <td><input type="text" name="{{ maquina }}_tipo_material_{{ i }}"></td>
+          <td><input type="text" name="{{ maquina }}_cliente_{{ i }}"></td>
+          <td><input type="number" name="{{ maquina }}_ordem_prod_{{ i }}"></td>
+          <td><input type="text" name="{{ maquina }}_material_{{ i }}"></td>
+          <td><input type="number" name="{{ maquina }}_qtd_fardos_{{ i }}"></td>
+          <td><input type="number" name="{{ maquina }}_qtd_kg_{{ i }}"></td>
+          <td><input type="number" name="{{ maquina }}_qtd_unid_{{ i }}"></td>
+          <td><input type="datetime" name="{{ maquina }}_dt_hora_inicial_{{ i }}"></td>
+          <td><input type="datetime" name="{{ maquina }}_dt_hora_final_{{ i }}"></td>
+          <td><input type="text" name="{{ maquina }}_bobina_usada_{{ i }}"></td>
+          <td><input type="text" name="{{ maquina }}_observacao_{{ i }}"></td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endfor %}
+  
+  
+</form>
+
+
+
+{% endblock %}
+

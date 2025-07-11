@@ -1,0 +1,49 @@
+/* Tamanhos das colunas */
+.col-carga { width: 80px;}
+.col-tipo {width: 90px;}
+.col-cliente {width: 90px;}
+.col-ordem {width: 80px;}
+.col-material {width: 400px;}
+.col-qtd_fardos {width: 80px;}
+.col-qtd_kg {width: 80px;}
+.col-qtd_und {width: 80px;}
+.col-dt_inicial {width: 200px;}
+.col-dt_final {width: 200px;}
+.col-bobina {width: 80px;}
+.col-obs {width: 200;}
+
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+
+
+/* Ajuste para inputs */
+.table input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  
+  font-size: medium;
+  border: 1px solid gray;
+}
+
+/*
+.table input {
+    border: 1px solid #ddd;
+    padding: 8px 2px;
+    border-radius: 4px;
+    font-size: 10px;
+    transition: all 0.3s ease;
+}
+*/
+
+.table input:hover {
+    border-color: #aaa;
+}
+
+.table input:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
