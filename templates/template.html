@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <title>{% block title %}-{% endblock %}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100">
+<div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-gray-900 text-white h-screen">
+        <div class="p-4">
+            <img alt="Sistema SOMA logo" class="mb-4" height="50" src="https://storage.googleapis.com/a1aa/image/ll7kHcbghAYvNr6Bs6-fFBxgUYjPSRoZaor7a72OmOQ.jpg" width="150"/>
+        </div>
+        <nav class="space-y-2">
+            <a class="block py-2.5 px-4 hover:bg-gray-700" href="{{url_for('dasboard_pedidos')}}">Página Inicial</a>
+            <a class="block py-2.5 px-4 hover:bg-gray-700" href="#">Estoque Acabado</a>
+            <a class="block py-2.5 px-4 hover:bg-gray-700" href="#">Analise de Pedidos</a>
+            <a class="block py-2.5 px-4 hover:bg-gray-700" href="#"></a>
+            <a class="block py-2.5 px-4 hover:bg-gray-700" href="#">Usuários</a>
+            <a class="block py-2.5 px-4 hover:bg-gray-700" href="#">Ajuda / Suporte</a>
+            <div>
+                <a class="block py-2.5 px-4 hover:bg-gray-700 cursor-pointer" onclick="toggleSubmenu()">Configuração</a>
+                <div class="pl-4 submenu">
+                    <a class="block py-2.5 px-4 hover:bg-gray-700" href="#">Importar relatorios</a>
+                    <a class="block py-2.5 px-4 hover:bg-gray-700" href="#">Configuração de maquina</a>
+                    <a class="block py-2.5 px-4 hover:bg-gray-700" href="#">Contas Bancárias</a>
+                </div>
+            </div>
+            
+        </nav>
+    </div>
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-semibold">Movimentações Financeiras</h1>
+            <div class="flex items-center space-x-4">
+                <span>Usuário (usuario@sistemasoma.com.br)</span>
+                <button class="bg-teal-500 text-white px-4 py-2 rounded">Imprimir</button>
+            </div>
+        </div>
+
+         <div class="container-fluid py-4">
+                {% block content %}
+                <!-- Conteúdo será injetado aqui -->
+                {% endblock %}
+         </div>
+
+    </div>
+</div>
+<!--
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+-->
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>
+
